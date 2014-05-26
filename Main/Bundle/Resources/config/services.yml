@@ -1,0 +1,7 @@
+parameters:
+#    keywords_main.example.class: Keywords\Main\Bundle\Example
+
+services:
+#    keywords_main.example:
+#        class: %keywords_main.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
