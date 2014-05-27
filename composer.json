@@ -1,4 +1,7 @@
 {
     "name" : "FlashPanther/TextAndKeys",
-    "type" : "symfony-bundle"
+    "type" : "symfony-bundle",
+    "autoload": {
+        "psr-0": { "FlashPanther\\Bundle\\TextAndKeysBundle": "" }
+    }
 }
