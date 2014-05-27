@@ -6,20 +6,6 @@
     },
     "target-dir": "FlashPanther/TextAndKeys",
     "require": {  
-        "jquery/jquery": "*"
-    }, 
-    "repositories": [  
-        {  
-            "type": "package",  
-            "package": {  
-                "name": "jquery/jquery",  
-                "version": "1.9-stable",  
-                "source":{  
-                    "url":"https://github.com/jquery/jquery.git",  
-                    "type":"git",  
-                    "reference":"master"  
-                }  
-            }  
-        }  
-    ]
+        "components/jquery": "1.9.*"
+    }
 }
