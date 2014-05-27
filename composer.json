@@ -1,8 +1,4 @@
 {
     "name" : "FlashPanther/TextAndKeys",
-    "type" : "symfony-bundle",
-    "autoload": {
-        "psr-0": { "FlashPanther\\Bundle\\TextAndKeysBundle": "" }
-    },
-    "target-dir": "FlashPanther/Bundle/TextAndKeysBundle"
+    "type" : "symfony-bundle"
 }
