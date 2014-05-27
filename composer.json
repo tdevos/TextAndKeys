@@ -4,5 +4,22 @@
     "autoload": {
         "psr-0": { "FlashPanther\\TextAndKeys\\": "" }
     },
-    "target-dir": "FlashPanther/TextAndKeys"
+    "target-dir": "FlashPanther/TextAndKeys",
+    "require": {  
+        "jquery/jquery": "*",  
+    }, 
+    "repositories": [  
+        {  
+            "type": "package",  
+            "package": {  
+                "name": "jquery/jquery",  
+                "version": "1.9-stable",  
+                "source":{  
+                    "url":"https://github.com/jquery/jquery.git",  
+                    "type":"git",  
+                    "reference":"master"  
+                }  
+            }  
+        }  
+    ]
 }
