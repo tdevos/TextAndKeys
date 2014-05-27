@@ -6,7 +6,7 @@
     },
     "target-dir": "FlashPanther/TextAndKeys",
     "require": {  
-        "jquery/jquery": "*",  
+        "jquery/jquery": "*"
     }, 
     "repositories": [  
         {  
