@@ -1,4 +1,74 @@
 {% block textAndKeys_widget %}
-<textarea></textarea>
-<input>
+    <textarea class="form-control textAndKeys" rows="10"></textarea>
+    <div class="results col-lg-12"></div>
+    <script type="application/javascript">
+        $(function(){
+            var words,
+                $results = $(".results");
+
+            function cleanText(text){
+                return text.replace(/[^a-zA-Z0-9\-\'éàè]+/g, '').toLowerCase();
+            }
+
+            function getWords(value){
+                $results.html("");
+                words = {};
+                var brutwords = value.split(/[\s\,\.\(\)]+/);
+                $.each(brutwords, function(id, val){
+                    var text = cleanText(val);
+                    if(text != ""){
+                        words[text] = {
+                            text: text,
+                            status: "unknown"
+                        };
+                    }
+                });
+                showWords();
+            }
+
+            function constructElement(data){
+                var $validate = $("<a>")
+                        .addClass("glyphicon glyphicon-ok")
+                        .attr("href", "#").on("click", function(){
+                    $(this).parents("span").hide("slow");
+                });
+                var $delete = $("<a>")
+                        .addClass("glyphicon glyphicon-remove")
+                        .attr("href", "#").on("click", function(){
+                    $(this).parents("span").hide("slow");
+                });
+                var $remove = $("<a>")
+                        .addClass("glyphicon glyphicon-off")
+                        .attr("href", "#").on("click", function(){
+                    $(this).parents("span").hide("slow");
+                });
+                var $element = $("<span>")
+                        .addClass("label").html(data.text);
+                switch (data.status){
+                    case "linked":
+                        $element.addClass("label-success").append("|").append($delete);
+                        break;
+                    case "unknown":
+                        $element.addClass("label-default").append("|").append($validate).append("|").append($remove);
+                        break;
+                    case "removed":
+                        $element.addClass("label-warning").append("|").append($validate);
+                        break;
+                }
+                return $element;
+            }
+
+            function showWords(){
+                $.each(words, function(id, data){
+                    var $element = constructElement(data)
+                    $results.append($element);
+                    $results.append(" ");
+                })
+            }
+
+            $("textarea.textAndKeys").on("keyup", function(e){
+                getWords($(this).val())
+            });
+        });
+    </script>
 {% endblock %}
