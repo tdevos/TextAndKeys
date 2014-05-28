@@ -15,6 +15,10 @@ In the "composer.json" of your project
 "repositories": [
     ...
     {
+        "type": "vcs",
+        "url": "https://github.com/FlashPanther/TextAndKeys"
+    },
+    {
         "type": "package",
         "package": {
             "name": "jquery/jquery",
