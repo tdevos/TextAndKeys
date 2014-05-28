@@ -2,23 +2,6 @@
 
 ##How to##
 
-```php
-# app/AppKernel.php
-
-class AppKernel extends Kernel
-{
-    public function registerBundles()
-    {
-        $bundles = array(
-            // ...
-            new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
-            new FlashPanther\TextAndKeys\FlashPantherTextAndKeysBundle(),
-        );
-        // ...
-    }
-}
-```
-
 In your `composer.json`
 
 ```
@@ -49,6 +32,23 @@ In your `composer.json`
 ]
 ```
 
+```php
+# app/AppKernel.php
+
+class AppKernel extends Kernel
+{
+    public function registerBundles()
+    {
+        $bundles = array(
+            // ...
+            new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
+            new FlashPanther\TextAndKeys\FlashPantherTextAndKeysBundle(),
+        );
+        // ...
+    }
+}
+```
+
 ```yml
 # app/config/config.yml
 
@@ -60,6 +60,12 @@ assetic:
         cssrewrite: ~
 braincrafted_bootstrap:
     less_filter: lessphp
+
+twig:
+    form:
+        resources:
+            - 'Flas:Form:fields.html.twig'
+
 ```
 
 ```html
