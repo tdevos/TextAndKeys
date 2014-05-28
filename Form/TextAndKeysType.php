@@ -1,6 +1,6 @@
 <?php
 
-namespace Keywords\Main\Bundle\Form;
+namespace FlashPanther\TextAndKeys\Form;
 
 use Symfony\Component\Form\AbstractType;
 
