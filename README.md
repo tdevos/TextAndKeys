@@ -1,6 +1,6 @@
 #TextAndKeys#
 
-##How to##
+##How to install##
 
 In your `composer.json`
 
@@ -103,4 +103,27 @@ twig:
 
 </body>
 </html>
+```
+
+##How to use##
+
+```php
+public function __construct() {
+    $this->keywords = new \Doctrine\Common\Collections\ArrayCollection();
+}
+
+/**
+ * @ORM\ManyToMany(targetEntity="\FlashPanther\TextAndKeys\Entity\Keywords", inversedBy="Item")
+ * @ORM\JoinTable(name="YOUR_TABLE_NAME_keywords")
+ */
+private $keywords;
+```
+
+```php
+$builder
+    ->add('name')
+    ->add('description', new TextAndKeysType(array(
+        "entity" => '\Acme\DemoBundle\Entity\Item'
+    )))
+;
 ```
