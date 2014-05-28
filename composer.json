@@ -10,18 +10,5 @@
         "twbs/bootstrap": "3.0.*",
         "jquery/jquery":  "1.10.*",
         "leafo/lessphp": "0.4.0"
-    },
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "jquery/jquery",
-                "version": "1.10.2",
-                "dist": {
-                    "url": "http://code.jquery.com/jquery-1.10.2.js",
-                    "type": "file"
-                }
-            }
-        }
-    ]
+    }
 }
