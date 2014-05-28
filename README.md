@@ -2,16 +2,33 @@
 
 ##How to##
 
-In the "composer.json" of your project
+```php
+# app/AppKernel.php
 
-```json
+class AppKernel extends Kernel
+{
+    public function registerBundles()
+    {
+        $bundles = array(
+            // ...
+            new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
+            new FlashPanther\TextAndKeys\FlashPantherTextAndKeysBundle(),
+        );
+        // ...
+    }
+}
+```
+
+In your `composer.json`
+
+```
 "require": {
     ...
     "FlashPanther/TextAndKeys" : "dev-master"
 }
 ```
 
-```json
+```
 "repositories": [
     ...
     {
